@@ -3,12 +3,12 @@
 
 using namespace std;
 
-    string search(vector<string>&list,string&required){
+    string searchFunction(vector<string>&list,string&required){
     for(int i=0;i<list.size();i++){
         if(list[i]==required)
         return required;
     }
-    return "-1";
+    return "Not Found";
 }
 
 int main()
