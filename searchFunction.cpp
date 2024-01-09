@@ -1,28 +1,16 @@
-
 #include <bits/stdc++.h>
 
-using namespace std;
-
-    string searchFunction(vector<string>&list,string&required){
-    for(int i=0;i<list.size();i++){
-        if(list[i]==required)
-        return required;
+std::vector<int> filterFunction(const std::vector<int> &list, std::function<bool(int)> Criteria) {
+    std::vector<int> filteredArray;
+    for(auto const &element: list){
+        if(Criteria(element))
+            filteredArray.push_back(element);
     }
-    return "Not Found";
+    return filteredArray;
 }
 
 int main()
 {
-    int n;
-    cin>>n;
-    vector<string>list;
-    string required;
-    cin>>required;
-    for(int i=0;i<n;i++)
-    {
-        cin>>list[i];
-    }
-string find = search(list,required);
-cout<<find;
+    std::cout<<"Hello World";
     return 0;
 }
