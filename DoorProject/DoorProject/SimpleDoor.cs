@@ -1,20 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DoorProject
+namespace Zeiss.DoorSystemLib
 {
     public class SimpleDoor
     {
-        public enum DoorState { Opened, Closed }
-        public DoorState State { get; private set; }
-        public string Model { get; set; }
-        public string Name { get; set; }
-
-        public void Open() { State = DoorState.Opened; }
-        public void Close() { State = DoorState.Closed; }
+        public DoorState CurrentState { get; set; }
+        public virtual void Activate()
+        {
+            if (this.CurrentState == DoorState.Closed)
+            {
+                this.CurrentState = DoorState.Opened;
+                Console.WriteLine("Door state changed: Open\n");
+            }
+        }
+        public virtual void Deactivate()
+        {
+            if (this.CurrentState == DoorState.Opened)
+            {
+                this.CurrentState = DoorState.Closed;
+                Console.WriteLine("Door state changed: Closed\n");
+            }
+        }
     }
 
+    public enum DoorState
+    {
+        Closed,
+        Opened
+    }
 }

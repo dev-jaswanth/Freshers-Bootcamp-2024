@@ -1,35 +1,41 @@
 ﻿using System;
 
-namespace DoorProject
+namespace Zeiss.DoorSystemLib
 {
     public class SmartDoor : SimpleDoor
     {
-        public Buzzer DoorBuzzer { get; private set; }
-        public Timer DoorTimer { get; private set; }
-        public IPagerNotification PagerNotifier { get; private set; }
-        public AutoClose DoorAutoCloser { get; private set; }
+        public int AlertThreshold { get; set; }
+        public event Action AlertTriggered;
+        private CountdownManager countdownTimer;
 
-        public SmartDoor(Buzzer buzzer, Timer timer, IPagerNotification pagerNotifier, AutoClose autoCloser)
+        public override void Activate()
         {
-            DoorBuzzer = buzzer;
-            DoorTimer = timer;
-            PagerNotifier = pagerNotifier;
-            DoorAutoCloser = autoCloser;
-
-            DoorTimer.Elapsed += OnTimerElapsed;
+            base.Activate();
+            InitializeTimer(AlertThreshold);
         }
-
-        public void OpenDoor()
+        public override void Deactivate()
         {
-            Open();
-            DoorTimer.SetTimer(1); // Start timer for 10 seconds
+            base.Deactivate();
         }
-
-        private void OnTimerElapsed()
+        private void InformObservers()
         {
-            DoorBuzzer.MakeNoise();
-            PagerNotifier.SendNotification("The door has been open for 10 seconds.");
-            DoorAutoCloser.Execute(this);
+            if (AlertTriggered != null)
+            {
+                AlertTriggered.Invoke();
+            }
+        }
+        public void InitializeTimer(int duration)
+        {
+            Console.WriteLine($"Setting timer for {duration} seconds\n");
+
+            countdownTimer = new CountdownManager(duration);
+            countdownTimer.BeginCountdown((remainingSeconds) =>
+            {
+                if (remainingSeconds == 0)
+                {
+                    InformObservers();
+                }
+            });
         }
     }
 }

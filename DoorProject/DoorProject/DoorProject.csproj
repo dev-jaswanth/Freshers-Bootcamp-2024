@@ -44,14 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoClose.cs" />
-    <Compile Include="Buzzer.cs" />
-    <Compile Include="IpagerNotification.cs" />
-    <Compile Include="PagerNotification.cs" />
+    <Compile Include="AlertBuzzer.cs" />
+    <Compile Include="DoorController.cs" />
+    <Compile Include="AlertPager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleDoor.cs" />
     <Compile Include="SmartDoor.cs" />
-    <Compile Include="Timer.cs" />
+    <Compile Include="CountDownManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

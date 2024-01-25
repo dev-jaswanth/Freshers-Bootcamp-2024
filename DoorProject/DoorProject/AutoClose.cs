@@ -1,13 +1,18 @@
 ﻿using System;
 
-namespace DoorProject
+namespace Zeiss.DoorSystemLib
 {
-    public class AutoClose
+    public class AutoShutManager
     {
-        public void Execute(SmartDoor door)
+        public SmartDoor controlledSmartDoor;
+        public AutoShutManager(SmartDoor door)
         {
-            door.Close();
-            Console.WriteLine("AutoClose: Door is now closed.");
+            controlledSmartDoor = door;
+        }
+        public void RaiseAlert()
+        {
+            Console.WriteLine("Auto shutdown initiated.");
+            controlledSmartDoor.Deactivate();
         }
     }
 }
