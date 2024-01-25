@@ -1,7 +1,0 @@
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\bin\Debug\DynamicArrays.exe.config
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\bin\Debug\DynamicArrays.exe
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\bin\Debug\DynamicArrays.pdb
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\obj\Debug\DynamicArrays.csproj.AssemblyReference.cache
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\obj\Debug\DynamicArrays.csproj.CoreCompileInputs.cache
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\obj\Debug\DynamicArrays.exe
-C:\Users\x6vjaswa\Desktop\learning_C#\DynamicArrays\DynamicArrays\obj\Debug\DynamicArrays.pdb
