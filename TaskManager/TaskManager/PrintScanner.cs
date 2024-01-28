@@ -1,4 +1,4 @@
-﻿using TaskManager;
+using TaskManager;
 
 public class PrintScanner : IPrinter, IScanner
 {
@@ -13,21 +13,15 @@ public class PrintScanner : IPrinter, IScanner
 
     public void Print(string document)
     {
-        // First scan, then print
-        ScanAndPrint(document);
+        
+        printer.Print(document);
     }
 
     public void Scan(string document)
     {
-        // First scan, then print
-        ScanAndPrint(document);
+       
+        scanner.Scan(document);
     }
 
-    private void ScanAndPrint(string document)
-    {
-        // Scanning the document
-        scanner.Scan(document);
-        // Printing the document
-        printer.Print(document);
-    }
+    
 }
