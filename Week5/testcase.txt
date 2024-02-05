@@ -1,0 +1,38 @@
+Given: "" 
+then 0
+
+Given: "1" 
+then 1
+
+Given: "1,2" 
+then 3
+
+Given: "1,2,3,4" 
+then 10
+
+Given: "1\n2,3" 
+then 6
+
+Given: "//;\n1;2"
+then 3
+
+Given: "//;\n1;2\n3"
+then 6
+
+Given: "-1,2"
+then Exception "negatives not allowed: -1"
+
+Given: "2,-4,-5" 
+then Exception "negatives not allowed: -4,-5"
+
+Given: "2,1001" 
+then 2
+
+Given: "//[***]\n1***2***3" 
+then 6
+
+Given: "//[*][%]\n1*2%3" 
+then 6
+
+Given: "//[***][%%]\n1***2%%3" 
+then 6
