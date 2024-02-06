@@ -86,80 +86,68 @@ The Dependency Inversion Principle (DIP) offers significant benefits in terms of
 - **Simplified Debugging:** When issues arise, the separation of concerns facilitated by DIP allows for more targeted debugging. You can focus on specific components without being bogged down by unrelated complexities.
 - **Enhanced Collaboration:** DIP's modular architecture makes it easier for multiple developers or teams to work on different parts of the application simultaneously. As long as they adhere to the defined abstractions, collaboration becomes smoother.
 
-### Implementing the Dependency Inversion Principle with a Logger Example
+### Payment Processing System example that demonstrates both the Strategy Pattern and the implementation of the Dependency Inversion Principle (DIP).
 
-This comprehensive example demonstrates the implementation of the Dependency Inversion Principle (DIP), followed by how to effectively write unit tests for DIP-structured code. We use a logger scenario as our example, showcasing an `ILogger` interface, its concrete implementation, a consumer class, and finally, unit tests using the Moq library.
+In a payment processing system, we might want to support multiple payment methods (e.g., credit card, PayPal, and bank transfer) without hard-coding the dependencies between the payment processor and the specific payment methods. The Strategy Pattern allows us to define a family of algorithms (in this case, payment methods), encapsulate each one, and make them interchangeable. DIP is adhered to by depending on abstractions (interfaces) rather than concrete classes.
 
-#### Defining the Logger Interface
+#### Defining the Pay Interface
 
-Start by defining an interface for logging, which represents an abstraction over any concrete logging mechanism.
+This interface defines the `Pay` method that all payment method classes must implement. It represents the abstraction layer for the payment strategies, adhering to the Dependency Inversion Principle by allowing the `PaymentProcessor` to depend on this abstraction rather than concrete implementations.
 
 ```csharp
-// ILogger.cs
-public interface ILogger
+// IPaymentMethod.cs
+public interface IPaymentMethod
 {
-    void Log(string message);
+    void Pay(decimal amount);
 }
 ```
-Implement the `ILogger` interface with a ConsoleLogger class that logs messages to the console. This is a concrete implementation that can be easily swapped out for another logger (e.g., a file logger) without changing the consumer code, thanks to DIP.
-#### ConsoleLogger.cs
+
+
+#### CreditCardPayment.cs
+The following Implements the `IPaymentMethod` interface, defining the `Pay` method for credit card payments. It's one of the concrete strategies for payment processing.
 ```csharp
-// ConsoleLogger.cs
-using System;
-
-public class ConsoleLogger : ILogger
+// CreditCardPayment.cs
+public class CreditCardPayment : IPaymentMethod
 {
-    public void Log(string message)
+    public void Pay(decimal amount)
     {
-        Console.WriteLine($"Log: {message}");
+        Console.WriteLine($"Paying {amount} using Credit Card.");
     }
 }
 ```
-This class is an example of a specific logging mechanism (in this case, console logging) that can be used by the application. It demonstrates how an application can use the ILogger interface to log messages without being directly coupled to the specifics of the logging mechanism.
+#### PayPalPayment.cs
+This class is an Another concrete implementation of the IPaymentMethod interface, this class enables payment through PayPal. It serves as an alternative strategy for payment processing.
 ```csharp
-// Application.cs
-public class Application
+// PayPalPayment.cs
+public class PayPalPayment : IPaymentMethod
 {
-    private readonly ILogger _logger;
-
-    public Application(ILogger logger)
+    public void Pay(decimal amount)
     {
-        _logger = logger;
-    }
-
-    public void Run()
-    {
-        _logger.Log("Application is running");
+        Console.WriteLine($"Paying {amount} using PayPal.");
     }
 }
 ```
-The Application class showcases the application of the Dependency Inversion Principle. It depends on the `ILogger` interface rather than any concrete logging implementation, which is passed to the Application class through its constructor (a technique known as **constructor injection**). The Run method of this class uses the `ILogger` instance to log a message, demonstrating that the Application class is designed to work with any implementation of `ILogger`.
-
-xUnit is a testing framework for the .NET programming languages. Moq, on the other hand, is a mocking framework for .NET.
-```csharp 
-// ApplicationTests.cs
-using Moq;
-using Xunit;
-
-public class ApplicationTests
+#### PaymentProcessor.cs
+The PaymentProcessor class utilizes the Strategy Pattern by referencing the IPaymentMethod interface. It's designed to process payments using the payment method (strategy) provided at runtime, demonstrating the Dependency Inversion Principle by depending on an abstraction rather than concrete classes. This design allows for easy integration of new payment methods without altering the PaymentProcessor's code.
+```csharp
+// PaymentProcessor.cs
+public class PaymentProcessor
 {
-    [Fact]
-    public void Run_LogsMessage()
+    private IPaymentMethod _paymentMethod;
+
+    public PaymentProcessor(IPaymentMethod paymentMethod)
     {
-        // Arrange
-        var mockLogger = new Mock<ILogger>();
-        var application = new Application(mockLogger.Object);
+        _paymentMethod = paymentMethod;
+    }
 
-        // Act
-        application.Run();
-
-        // Assert
-        mockLogger.Verify(logger => logger.Log("Application is running"), Times.Once());
+    public void ProcessPayment(decimal amount)
+    {
+        _paymentMethod.Pay(amount);
     }
 }
-
 ```
-This test verifies that the Application class's `Run` method correctly invokes the `Log` method on its `ILogger` dependency, demonstrating the unit testing of a class that adheres to DIP. The use of dependency injection (DI) for providing the ILogger implementation at runtime, and the mocking of this dependency for testing, exemplify how DIP enhances testability and maintainability of software.
+This example demonstrates selecting a payment strategy  and processing a payment through the `PaymentProcessor`. It showcases the flexibility and decoupling provided by using the Strategy Pattern and adhering to the Dependency Inversion Principle in a simple C# application.
+
 
 ## Conclusion
 ---
