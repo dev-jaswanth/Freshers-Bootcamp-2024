@@ -57,18 +57,18 @@ The Dependency Inversion Principle (DIP) and Inversion of Control (IoC) are clos
 ### 4.1 Decoupling High-Level and Low-Level Modules
 
 Through DIP provides several advantages like:
-- Reduced Dependencies
-- Isolation of Changes
-- Parallel Development
-- Enhanced Maintainability
-- Long-Term Adaptability and reduced fragility.
+- **Reduced Dependencies**
+- **Isolation of Changes**
+- **Parallel Development**
+- **Enhanced Maintainability**
+- **Long-Term Adaptability and reduced fragility**.
 
 ### 4.2 Facilitating Testability and Mocking
 
-- Isolation of High-Level Modules: The abstraction allows you to isolate the high-level modules during testing by substituting real implementations with mock objects or stubs.
-- Mocking for Unit Testing: Mocking involves creating simulated objects that mimic the behavior of real components. With DIP, high-level modules can be tested in isolation using mock implementations of low-level modules.
+- **Isolation of High-Level Modules:** The abstraction allows you to isolate the high-level modules during testing by substituting real implementations with mock objects or stubs.
+- **Mocking for Unit Testing:** Mocking involves creating simulated objects that mimic the behavior of real components. With DIP, high-level modules can be tested in isolation using mock implementations of low-level modules.
 - Control Over Test Scenarios: Using mock objects, you can control and simulate various scenarios, inputs, and behaviors to thoroughly test different aspects of a high-level module.
-- Encouraging Test-Driven Development (TDD): Dependency Inversion aligns well with Test-Driven Development (TDD) practices and the FIRST principles.
+- **Encouraging Test-Driven Development (TDD):** Dependency Inversion aligns well with Test-Driven Development (TDD) practices and the FIRST principles.
 
 ### 4.3 Promoting Code Reusability and Maintainability
 
@@ -76,15 +76,15 @@ The Dependency Inversion Principle (DIP) offers significant benefits in terms of
 
 #### Code Reusability:
 - Interface-Based Development: DIP encourages designing interfaces that define a component's behavior. These interfaces can be reused across various modules, making it easier to create new components that adhere to the same contract.
-- Consistent Interfaces: With a clear focus on abstractions, you're more likely to create consistent, standardized interfaces. This consistency promotes code reusability and simplifies the process of integrating new implementations.
-- Pluggable Components: Since high-level modules depend on abstractions, you can easily replace or upgrade low-level components without affecting the rest of the system. This pluggability ensures that changes are localized, reducing the risk of introducing regressions.
+- **Consistent Interfaces:** With a clear focus on abstractions, you're more likely to create consistent, standardized interfaces. This consistency promotes code reusability and simplifies the process of integrating new implementations.
+- **Pluggable Components:** Since high-level modules depend on abstractions, you can easily replace or upgrade low-level components without affecting the rest of the system. This pluggability ensures that changes are localized, reducing the risk of introducing regressions.
 
 #### Maintainability:
-- Isolation of Changes: DIP allows you to change low-level modules without modifying high-level modules. This isolation reduces the risk of unintentional side effects, making maintenance safer and more predictable.
-- Limited Ripple Effects: With DIP in place, the scope of changes is limited to the specific components affected. This minimizes the propagation of changes throughout the codebase, making the maintenance process more manageable.
-- Scalability: As your application grows, DIP enables you to add new features or swap out components without rewriting existing code. This scalability is crucial as your software evolves to meet changing requirements.
-- Simplified Debugging: When issues arise, the separation of concerns facilitated by DIP allows for more targeted debugging. You can focus on specific components without being bogged down by unrelated complexities.
-- Enhanced Collaboration: DIP's modular architecture makes it easier for multiple developers or teams to work on different parts of the application simultaneously. As long as they adhere to the defined abstractions, collaboration becomes smoother.
+- **Isolation of Changes:** DIP allows you to change low-level modules without modifying high-level modules. This isolation reduces the risk of unintentional side effects, making maintenance safer and more predictable.
+- **Limited Ripple Effects:** With DIP in place, the scope of changes is limited to the specific components affected. This minimizes the propagation of changes throughout the codebase, making the maintenance process more manageable.
+- **Scalability:** As your application grows, DIP enables you to add new features or swap out components without rewriting existing code. This scalability is crucial as your software evolves to meet changing requirements.
+- **Simplified Debugging:** When issues arise, the separation of concerns facilitated by DIP allows for more targeted debugging. You can focus on specific components without being bogged down by unrelated complexities.
+- **Enhanced Collaboration:** DIP's modular architecture makes it easier for multiple developers or teams to work on different parts of the application simultaneously. As long as they adhere to the defined abstractions, collaboration becomes smoother.
 
 ### Implementing the Dependency Inversion Principle with a Logger Example
 
