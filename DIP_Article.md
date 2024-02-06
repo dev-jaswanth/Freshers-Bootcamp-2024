@@ -115,7 +115,7 @@ public class ConsoleLogger : ILogger
     }
 }
 ```
-The Application class uses the `ILogger` interface, demonstrating dependency inversion. It is designed to work with any `ILogger` implementation, highlighting the flexibility and decoupling achieved through DIP.
+This class is an example of a specific logging mechanism (in this case, console logging) that can be used by the application. It demonstrates how an application can use the ILogger interface to log messages without being directly coupled to the specifics of the logging mechanism.
 ```csharp
 // Application.cs
 public class Application
@@ -133,6 +133,8 @@ public class Application
     }
 }
 ```
+The Application class showcases the application of the Dependency Inversion Principle. It depends on the `ILogger` interface rather than any concrete logging implementation, which is passed to the Application class through its constructor (a technique known as **constructor injection**). The Run method of this class uses the `ILogger` instance to log a message, demonstrating that the Application class is designed to work with any implementation of `ILogger`.
+
 xUnit is a testing framework for the .NET programming languages. Moq, on the other hand, is a mocking framework for .NET.
 ```csharp 
 // ApplicationTests.cs
