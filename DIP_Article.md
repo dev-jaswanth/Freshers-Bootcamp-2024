@@ -1,8 +1,9 @@
 # The Art of Managing Dependencies using the Dependency Inversion Principle for Superior Software Architecture
-
+---
 In the ever-evolving landscape of software engineering, the principles that guide our design decisions are paramount to achieving scalability, maintainability, and testability. Among these guiding lights, the Dependency Inversion Principle (DIP) stands out as a cornerstone for architecting systems that endure and adapt over time. This article delves into the essence of DIP, emphasizing the 'how' over the 'what', and unravels the ways in which it fosters loose coupling through abstraction, thereby paving the way for more scalable, maintainable, and testable designs.
 
-## Chapter 1: Understanding the Core of Dependency Inversion Principle
+##  1. Understanding the Core of Dependency Inversion Principle
+----
 
 The Dependency Inversion Principle (DIP) is one of the SOLID principles of object-oriented design, introduced by Robert C. Martin.
 
@@ -33,7 +34,8 @@ DIP suggests the following:
 - DI involves providing dependencies (usually via constructor parameters) to a component rather than letting the component create its own dependencies.
 - This allows for easy substitution of implementations and promotes adherence to abstractions.
 
-## Chapter 2: Dependency Inversion vs. Dependency Injection
+##  2. Dependency Inversion vs. Dependency Injection
+---
 
 "Dependency Inversion" and "Dependency Injection" are related concepts in software engineering that often work together, but they refer to different aspects of managing dependencies in a software system.
 
@@ -41,14 +43,16 @@ DIP suggests the following:
 - It involves providing dependencies to a class from an external source, typically through constructor parameters, setters, or methods.
 - Dependency Injection ensures that a class adheres to the Dependency Inversion Principle by allowing high-level components to depend on abstractions rather than concrete implementations.
 
-## Chapter 3: DIP in the Context of Inversion of Control (IoC)
+##  3. DIP in the Context of Inversion of Control (IoC)
+---
 
 The Dependency Inversion Principle (DIP) and Inversion of Control (IoC) are closely related concepts that together contribute to creating flexible, maintainable, and loosely coupled software architectures.
 
 - In traditional programming, the main program controls the flow of execution by directly calling various methods or functions. In contrast, with IoC, the control is "inverted," meaning that the framework or container controls the flow of execution by invoking methods on your behalf.
 - While the Dependency Inversion Principle emphasizes the need for high-level components to depend on abstractions, Inversion of Control provides the mechanism to achieve this by managing the creation and injection of dependencies. IoC and DIP work hand in hand.
 
-## Chapter 4: Benefits and Advantages of Dependency Inversion Principle
+##  4. Benefits and Advantages of Dependency Inversion Principle
+---
 
 ### 4.1 Decoupling High-Level and Low-Level Modules
 
@@ -156,5 +160,6 @@ public class ApplicationTests
 This test verifies that the Application class's `Run` method correctly invokes the `Log` method on its `ILogger` dependency, demonstrating the unit testing of a class that adheres to DIP. The use of dependency injection (DI) for providing the ILogger implementation at runtime, and the mocking of this dependency for testing, exemplify how DIP enhances testability and maintainability of software.
 
 ## Conclusion
+---
 
 The principle of dependency inversion is at the root of many of the benefits claimed for object-oriented technology. Its proper application is necessary for the creation of reusable frameworks. It is also critically important for the construction of code that is resilient to change. The Dependency Inversion Principle is not merely a guideline but a philosophy that, when correctly applied, profoundly transforms the architecture of software systems. It encourages a design that is inherently more adaptable, easier to test, and capable of accommodating change with minimal disruption. By elevating abstractions over concrete implementations, DIP not only promotes loose coupling but also lays the groundwork for creating systems that are truly scalable and maintainable.
