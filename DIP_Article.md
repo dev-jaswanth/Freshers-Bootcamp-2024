@@ -41,9 +41,9 @@ DIP suggests the following:
 
 - Dependency Injection is a concrete technique for achieving Dependency Inversion.
 - DI can be achieved in several ways, including constructor injection, property injection, and method injection.
-- >**Constructor Injection**: Dependencies are provided through a class's constructor.
-**Property Injection**: Dependencies are set through properties or setters after an object is constructed.
-**Method Injection**: Dependencies are provided as parameters to the methods that need them.
+> - **Constructor Injection**: Dependencies are provided through a class's constructor.
+ > - **Property Injection**: Dependencies are set through properties or setters after an object is constructed.
+> - **Method Injection**: Dependencies are provided as parameters to the methods that need them.
 
  - Dependency Injection ensures that a class adheres to the Dependency Inversion Principle by allowing high-level components to depend on abstractions rather than concrete implementations.
 
