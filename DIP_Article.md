@@ -34,14 +34,18 @@ DIP suggests the following:
 - DI involves providing dependencies (usually via constructor parameters) to a component rather than letting the component create its own dependencies.
 - This allows for easy substitution of implementations and promotes adherence to abstractions.
 
-##  2. Dependency Inversion vs. Dependency Injection
+##  2. Dependency Inversion and Dependency Injection
 ---
 
 "Dependency Inversion" and "Dependency Injection" are related concepts in software engineering that often work together, but they refer to different aspects of managing dependencies in a software system.
 
 - Dependency Injection is a concrete technique for achieving Dependency Inversion.
-- It involves providing dependencies to a class from an external source, typically through constructor parameters, setters, or methods.
-- Dependency Injection ensures that a class adheres to the Dependency Inversion Principle by allowing high-level components to depend on abstractions rather than concrete implementations.
+- DI can be achieved in several ways, including constructor injection, property injection, and method injection.
+- >**Constructor Injection**: Dependencies are provided through a class's constructor.
+**Property Injection**: Dependencies are set through properties or setters after an object is constructed.
+**Method Injection**: Dependencies are provided as parameters to the methods that need them.
+
+ - Dependency Injection ensures that a class adheres to the Dependency Inversion Principle by allowing high-level components to depend on abstractions rather than concrete implementations.
 
 ##  3. DIP in the Context of Inversion of Control (IoC)
 ---
@@ -67,7 +71,7 @@ Through DIP provides several advantages like:
 
 - **Isolation of High-Level Modules:** The abstraction allows you to isolate the high-level modules during testing by substituting real implementations with mock objects or stubs.
 - **Mocking for Unit Testing:** Mocking involves creating simulated objects that mimic the behavior of real components. With DIP, high-level modules can be tested in isolation using mock implementations of low-level modules.
-- Control Over Test Scenarios: Using mock objects, you can control and simulate various scenarios, inputs, and behaviors to thoroughly test different aspects of a high-level module.
+- **Control Over Test Scenarios**: Using mock objects, you can control and simulate various scenarios, inputs, and behaviors to thoroughly test different aspects of a high-level module.
 - **Encouraging Test-Driven Development (TDD):** Dependency Inversion aligns well with Test-Driven Development (TDD) practices and the FIRST principles.
 
 ### 4.3 Promoting Code Reusability and Maintainability
@@ -103,7 +107,7 @@ public interface IPaymentMethod
 ```
 
 
-#### CreditCardPayment.cs
+#### CreditCardPayment
 The following Implements the `IPaymentMethod` interface, defining the `Pay` method for credit card payments. It's one of the concrete strategies for payment processing.
 ```csharp
 // CreditCardPayment.cs
@@ -115,7 +119,7 @@ public class CreditCardPayment : IPaymentMethod
     }
 }
 ```
-#### PayPalPayment.cs
+#### PayPalPayment
 This class is an Another concrete implementation of the IPaymentMethod interface, this class enables payment through PayPal. It serves as an alternative strategy for payment processing.
 ```csharp
 // PayPalPayment.cs
@@ -127,7 +131,7 @@ public class PayPalPayment : IPaymentMethod
     }
 }
 ```
-#### PaymentProcessor.cs
+#### PaymentProcessor
 The PaymentProcessor class utilizes the Strategy Pattern by referencing the IPaymentMethod interface. It's designed to process payments using the payment method (strategy) provided at runtime, demonstrating the Dependency Inversion Principle by depending on an abstraction rather than concrete classes. This design allows for easy integration of new payment methods without altering the PaymentProcessor's code.
 ```csharp
 // PaymentProcessor.cs
