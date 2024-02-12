@@ -1,0 +1,11 @@
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\bin\Debug\net8.0\CheckoutSystem.deps.json
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\bin\Debug\net8.0\CheckoutSystem.dll
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\bin\Debug\net8.0\CheckoutSystem.pdb
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\CheckoutSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\CheckoutSystem.AssemblyInfoInputs.cache
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\CheckoutSystem.AssemblyInfo.cs
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\CheckoutSystem.csproj.CoreCompileInputs.cache
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\CheckoutSystem.dll
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\refint\CheckoutSystem.dll
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\CheckoutSystem.pdb
+C:\Users\x6vjaswa\Desktop\learning_C#\CheckoutSystem\CheckoutSystem\obj\Debug\net8.0\ref\CheckoutSystem.dll
