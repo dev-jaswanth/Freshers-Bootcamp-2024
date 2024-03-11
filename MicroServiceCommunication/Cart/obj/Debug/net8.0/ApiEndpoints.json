@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "CartService.Controllers.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "Cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CartService.Controllers.CartItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CartService.Controllers.CartController",
+    "Method": "GetCart",
+    "RelativePath": "Cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
