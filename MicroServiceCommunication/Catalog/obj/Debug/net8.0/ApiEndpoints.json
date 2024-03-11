@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "CatalogService.Controllers.CatalogController",
+    "Method": "GetProductInfo",
+    "RelativePath": "Catalog/{productId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "CustomerService.Controllers.CustomerController",
+    "Method": "BuyItemsFromCart",
+    "RelativePath": "Customer/buy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartItems",
+        "Type": "System.Collections.Generic.List\u00601[[Customer.ViewModel.viewModel, Customer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
