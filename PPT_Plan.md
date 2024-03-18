@@ -18,6 +18,10 @@ Our journey of innovation and learning over 2.5 months
 - .NET
 - Full Stack Development (React, Angular)
 - Testing methods
+- microservices
+- azure
+- API Gateway
+- 
 - ..anything to be added
 
 ---
@@ -40,6 +44,7 @@ Ensuring quality at every level of development
 # Slide 4: Project Overview
 ## Project Name:
 Feature Mesh Store of ML
+Description and the competetors
 
 ## Duration:
 2 weeks sprint cycles
@@ -51,6 +56,8 @@ Feature Mesh Store of ML
 
 # Slide 5: Project Highlights
 ## Challenges Faced:
+## Technical and Team Challenges
+react and angular implementation
 ......
 
 ## Solutions Implemented:
@@ -70,7 +77,7 @@ Mastering the art of full-stack development and system design
 
 ## Teamwork and Collaboration:
 Discovering the power of synergy in project success
-
+## Unit Testing and it is a Hybrid architecture and it can be done in a more effiecient way by mirco service. We can still aim for a more UI and Backend Integration.
 ---
 
 # Slide 7: Conclusion 
